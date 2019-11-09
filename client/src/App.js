@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react'
+import './App.css'
+import MainContainer from './components/MainContainer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export default class App extends Component {
+  constructor(){
+    super()
+    this.state = {
+      teams: []
+    }
+  }
+
+  // componentDidMount(){
+  //   fetch('https://worldcup.sfg.io/teams/')
+  //     .then(response => response.json())
+  //     .then(res => this.setState({
+  //       teams: res.results
+  //     }))
+  // }
+
+  render(){
+    return(
+      <div className='App'>
+        <h1>Womens World Cup Teams 2019</h1>
+        
+        <MainContainer teams={this.state.teams}/>
+        
+      </div>
+    )
+  }
 }
-
-export default App;
