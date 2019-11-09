@@ -1,14 +1,15 @@
 import React from "react";
+import Card from './Card'
 
 
 export default function CardContainer(props) {
 
-    const teams = props.teams.map(teams => {
-        return <card changeActiveCard={props.changeActiveCard} teams={teams} key={teams.id}/>
+    const players = props.players.map(player => {
+        return <Card changeActiveCard={props.changeActiveCard} player={player} key={player.id}/>
     })
     return (
         <div className="card-container">
-            {teams}
+            {players}
         </div>
     )
 }

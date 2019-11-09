@@ -9,26 +9,26 @@ export default class Card extends Component {
        }
    }
 
-    handleClick = (character) => {
+    handleClick = (player) => {
         this.setState({
             showAttributes: !this.state.showAttributes
         })
-        this.props.changeActiveCard(character)
+        this.props.changeActiveCard(player)
     }
 
     displayStuff = () => {
-        return <Attributes character={this.props.character}/>
+        return <Attributes player={this.props.player}/>
     }
 
     dotheOtherThing = () => {
-        return this.state.showAttributes ? <Attributes character={this.props.character}/> : 'CLICK ME'
+        return this.state.showAttributes ? <Attributes player={this.props.player}/> : 'More..'
     }
     render(){
-        const {character} = this.props
+        const {player} = this.props
         return (
-            <div className='card' onClick={() => this.props.id ? null : this.handleClick(character)}>
-                <h3>{character.name}</h3>
-                <img src={character.image} alt='name'/>
+            <div className='card' onClick={() => this.props.id ? null : this.handleClick(player)}>
+                <h3>{player.name}</h3>
+                
                 {this.props.id ? this.displayStuff() : this.dotheOtherThing()}
             </div>
         )

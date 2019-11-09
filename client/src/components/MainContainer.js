@@ -6,22 +6,22 @@ export default class MainContainer extends Component {
     constructor(props){
         super(props)
         this.state = {
-            teams: {},
+            player: {},
         }
     }
 
-    changeActiveCard = (teams) => {
+    changeActiveCard = (player) => {
         this.setState({
-            teams: teams
+            player: player
         })
     } 
 
     render(){
         return(
             <div className='main-container'>
-                <CardContainer changeActiveCard={this.changeActiveCard} teams={this.props.teams}/>
-                {this.state.teams.id
-                    ? <ActiveCard teams={this.state.teams}/>
+                <CardContainer changeActiveCard={this.changeActiveCard} players={this.props.players}/>
+                {this.state.player.id
+                    ? <ActiveCard player={this.state.player}/>
                     : 'No active card'}
             </div>
         )}

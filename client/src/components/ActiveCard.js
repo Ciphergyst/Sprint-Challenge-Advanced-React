@@ -4,7 +4,7 @@ import Card from './Card'
 export default function ActiveCard(props) {
   return (
     <React.Fragment>
-      <Card teams={props.teams} id='active-card'/>
+      <Card player={props.player} id='active-card'/>
     </React.Fragment>
   )
 }

@@ -1,12 +1,12 @@
 import React from "react";
 
 export default function Attributes(props) {
-  const { teams } = props;
+  const { player } = props;
   return (
     <div className="attributes-container">
-      <p>country: {teams.country}</p>
-      <p>Fifa Code: {teams.fifa_code}</p>
-      <p>Group Letter: {teams.group_letter}</p>
+      <p>Name: {player.name}</p>
+      <p>Country: {player.country}</p>
+      <p>Searches: {player.searches}</p>
     </div>
   );
 }
