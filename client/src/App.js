@@ -3,6 +3,8 @@ import './App.css'
 import MainContainer from './components/MainContainer';
 import axios from 'axios';
 
+export const worldCup= () => "Womens World Cup Players 2019";
+
 
 export default class App extends Component {
   constructor(){
